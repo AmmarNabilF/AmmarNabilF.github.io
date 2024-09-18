@@ -22,10 +22,11 @@ body {
 
 table{
     background-color: white;
-    width: 30%;
+    width: 10%;
     height: 10px auto;
     border-collapse: collapse;
     border-radius: 20px;
+    margin: 0 auto;
 }
 
 th {
