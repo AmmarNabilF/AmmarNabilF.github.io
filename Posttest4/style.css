@@ -1,0 +1,982 @@
+:root {
+    --primary-color: #b5701b;   
+    --secondary-color: #88561a; 
+    --hovertext-color: #555;    
+    --background-color: #f7f7f7;   
+    --font-color: #f7f7f7;      
+    --flipcard-color: #f7f7f7;
+    --element-background: #fff;
+    --phe-color: #555;
+}
+
+.darkmode {
+    --primary-color: #a98350;  
+    --secondary-color: #a98350; 
+    --hovertext-color: #b5b5b5; 
+    --background-color: #2c2c2c; 
+    --font-color: #dcdcdc;       
+    --flipcard-color: #3a3a3a;
+    --element-background: #3a3a3a;
+    --phe-color: chocolate;   
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+}
+
+.navbar {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    top: 0;
+    position: fixed;
+    background-color: var(--primary-color);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    z-index: 2;
+}
+
+.navbar button {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    border: 4px solid var(--font-color);
+    border-radius: 100%;
+    cursor: pointer;
+    margin-right: 3vw;
+}
+
+.navbar button:hover {
+    background-color: var(--hovertext-color);
+    color: var(--primary-color);
+}
+
+.navbar button img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+
+nav ul.logo {
+    margin-right: auto;
+    width: 10px;
+}
+
+nav ul.menu {
+    position: center;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    flex-grow: 1;
+    margin-left: 200px;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li img {
+    width: auto;
+    height: 100px;
+}
+
+nav ul li a {
+    color: var(--font-color);
+    text-decoration: none;
+    font-size: 30px;
+    padding: 10px;
+    transition: ease 0.3s;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: var(--hovertext-color);
+}
+
+.undernav {
+    margin-top: 300px;
+    text-align: center;
+}
+
+.undernav h1 {
+    font-size: 53px;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+.undernav p {
+    font-size: 30px;
+    color: var(--hovertext-color);
+    margin: 100px;
+    padding: 0px;
+}
+
+.survey {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin-right: 5%;
+}
+
+.survey img {
+    width: 3vw;
+    height: auto;
+}
+
+#hamburger {
+    display: none;
+}
+/* ================================================ Survey ============================================ */
+
+.survey-form {
+    background-color: #fff;
+    width: 500px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,.2);
+}
+.survey-form .fields {
+    position: relative;
+    padding: 20px;
+}
+.survey-form select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, #c7c9cb 50%), linear-gradient(135deg, #c7c9cb 50%, transparent 50%), linear-gradient(to right, #dfe0e0, #dfe0e0);
+    background-position: calc(100% - 20px) 20px, calc(100% - 15px) 20px, calc(100% - 40px) 10px;
+    background-size: 5px 5px, 5px 5px, 1px 25px;
+    background-repeat: no-repeat;
+}
+.survey-form select option:first-child {
+    display: none;
+ }
+.survey-form input[type="date"]::-webkit-calendar-picker-indicator {
+    color: #ddd;
+    filter: invert(0.8);
+}
+.survey-form input[type="text"], 
+.survey-form input[type="email"],
+.survey-form input[type="date"],
+.survey-form input[type="tel"],
+.survey-form select {
+    display: flex;
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #dfe0e0;
+    width: 100%;
+    flex-basis: 100%;
+    height: 47px;
+}
+.survey-form input[type="text"]:focus, 
+.survey-form input[type="email"]:focus,
+.survey-form input[type="tel"]:focus,
+.survey-form input[type="date"]:focus,
+.survey-form select:focus {
+    border: 1px solid #c6c7c7;
+}
+.survey-form input[type="text"]::placeholder, 
+.survey-form input[type="email"]::placeholder, 
+.survey-form input[type="tel"]::placeholder, 
+.survey-form input[type="date"]:invalid, 
+.survey-form textarea::placeholder,
+.survey-form select:invalid {
+    color: #858688;
+}
+.survey-form textarea {
+    resize: none;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid #dfe0e0;
+    width: 100%;
+    height: 150px;
+}
+.survey-form textarea:focus {
+    border: 1px solid #c6c7c7;
+}
+.survey-form .buttons {
+    padding: 20px;
+    border-top: 1px solid #eceff2;
+}
+.survey-form .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 0;
+    background-color: #c9704c;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-right: 5px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.survey-form .btn:hover {
+    background-color: #c26c4a;
+}
+.survey-form .btn.alt {
+    background-color: transparent;
+    border: 1px solid #c9704c;
+    color: #c9704c;
+}
+.survey-form .btn.alt:hover {
+    border: 1px solid #c26c4a;
+    color: #c26c4a;  
+}
+.survey-form input[name="email"] {
+    position: relative;
+    display: block;
+}
+.survey-form .field {
+    display: inline-flex;
+    position: relative;
+    width: 100%;
+    padding-bottom: 20px;
+}
+.survey-form label, .survey-form p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8e939b;
+}
+.survey-form .field i {
+    position: absolute;
+    color: #dfe2e5;
+    top: 25px;
+    left: 15px;
+    z-index: 10;
+}
+.survey-form .field i ~ input {
+    padding-left: 45px !important;
+}
+.survey-form .responses {
+    padding: 15px;
+    margin: 0;
+}
+.survey-form .fields .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.survey-form .fields .wrapper > div {
+    width: 100%;
+}
+.survey-form .fields .wrapper .gap {
+    width: 35px;
+}
+.survey-form .steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: calc(100% - 35px);
+    align-self: center;
+    margin: 0 auto;
+}
+.survey-form .steps::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #f2f4f7;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+}
+.survey-form .steps .step {
+    width: 25px;
+    height: 25px;
+    background-color: #f2f4f7;
+    border: 3px solid #f2f4f7;
+    border-radius: 50px;
+    
+    z-index: 1;
+}
+.survey-form .steps .step.current {
+    background-color: #8cc6f2;
+}
+.survey-form .steps .step.complete {
+    background-color: #6ECBA4;
+}
+.survey-form .rating {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.survey-form .rating input[type="radio"]:checked,
+.survey-form .rating input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+.survey-form .rating input[type="radio"]:checked + label,
+.survey-form .rating input[type="radio"]:not(:checked) + label
+{
+    display: flex;
+    position: relative;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    width: 31px;
+    height: 31px;
+    cursor: pointer;
+    color: #8e939b;
+    z-index: 10;
+}
+.survey-form .rating input[type="radio"]:checked + label:before,
+.survey-form .rating input[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #dfe0e0;
+    border-radius: 100%;
+    background: #fff;
+    z-index: -1;
+}
+.survey-form .rating input[type="radio"]:checked + label:after,
+.survey-form .rating input[type="radio"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 31px;
+    height: 31px;
+    border-radius: 100%;
+    background: #c9704c;
+    z-index: -1;
+}
+.survey-form .rating input[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+}
+.survey-form .rating input[type="radio"]:checked + label {
+    color: #fff;
+}
+.survey-form .rating input[type="radio"]:checked + label:after {
+    opacity: 1;
+}
+.survey-form .rating-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #8e939b;
+    padding: 15px 0 25px;      
+}
+.survey-form .group {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+.survey-form .group label {
+    display: flex;
+    font-weight: 500;
+    height: 25px;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.survey-form .group input[type="radio"],
+.survey-form .group input[type="checkbox"] {
+    appearance: none;
+    display: inline-flex;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    padding: 2px;
+    background-clip: content-box;
+    border: 1px solid #dfe0e0;
+    background-color: #eef1f1;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.survey-form .group input[type="radio"]:hover,
+.survey-form .group input[type="checkbox"]:hover {
+    border: 1px solid #d2d3d3;
+}
+.survey-form .group input[type="radio"]:checked,
+.survey-form .group input[type="checkbox"]:checked {
+    border: 1px solid #d2d3d3;
+    background-color: #2996ed;
+}
+.survey-form .group input[type="checkbox"] {
+    border-radius: 0;
+}
+.survey-form .step-content {
+    display: none;
+}
+.survey-form .step-content.current {
+    display: block;
+}
+.survey-form .result {
+    padding: 25px;
+}
+.survey-form .result h3 {
+    color: #6a737f;
+}
+.survey-form .result p {
+    font-weight: 500;
+}
+
+/* ================================================= Main ============================================= */
+main {
+    margin-top: 170px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#line-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#logo-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#logo-area img {
+    width: 80px;
+    height: 80px;
+}
+
+#line-text {
+    display: flex;
+    gap: 20px;
+}
+
+#text-area {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+#text-area h1 {
+    font-size: 40px;
+    color: var(--primary-color);
+}
+
+#text-area p {
+    font-size: 25px;
+    color: var(--hovertext-color);
+}
+
+#catalogue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#catalogue-area {
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.catalogue-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px; 
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    margin: 20px;
+    z-index: 1;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    justify-content: center;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front img{
+    width: 300px;
+    height: 300px;
+}
+.flip-card-front {
+    background-color: var(--flipcard-color);
+    color: black;
+}
+
+.flip-card-back {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* ========================================================= BATAS MAIN CONTENT ================================================================== */
+#Photo {
+    padding: 20px;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    background-color: var(--element-background);
+}
+
+#Photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: brightness(80%);
+}
+
+#biodata {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: var(--background-colorr);
+}
+
+#PHE {
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: var(--background-color);
+}
+
+#profile, #Hobbies, #Education{
+    background-color: var(--element-background);
+    padding: 20px;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: var(--phe-color);
+}
+
+
+#SocialMedia {
+    background-color: var(--element-background);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#SocialMedia a {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--element-background);
+}
+
+#SocialMedia a img {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    text-align: center;
+    padding: 0px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.fit-container {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-info a {
+    color: black;
+    text-decoration: none;
+    transition: ease 0.3s;
+}
+
+.footer-info a:hover {
+    color: var(--hovertext-color);
+}
+
+.footer-logo {
+    margin-right: 34%;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100px;
+}
+
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .survey {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2%;
+        margin-right: 5%;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    .navbar {
+        width: 100%;    
+    }
+
+    .navbar button {
+        margin-right: 20px;
+        padding: 0;
+    }
+
+    .navbar button img {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .navbar button {
+        margin-right: 20%;
+        padding: 0;
+    }
+
+    .navbar ul.menu {
+        flex-direction: column;
+        position: absolute;
+        width: 20rem;
+        height: 100vh;
+        background-color: var(--background-color);
+        top: 100%;
+        left: -100%;
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+    }
+
+    .navbar ul.menu.active {
+        left: 0;
+    }
+
+    .navbar ul.menu li a{
+        color: var(--hovertext-color);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .undernav {
+        margin-top: 200px;
+    }
+
+    main {
+        margin-top: 150px;
+    }
+
+    #catalogue {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #catalogue-area {
+        gap: 10px;
+    }
+
+    #text-area {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #logo-area img {
+        width: 60px;
+        height: 60px;
+    }
+
+    #text-area h1 {
+        font-size: 30px;
+    }
+
+    #text-area p {
+        font-size: 20px;
+    }
+
+    #catalogue {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #catalogue-area {
+        gap: 10px;
+    }
+
+    #Photo {
+        padding: 10px;
+        margin-right: auto;
+        margin-bottom: 10px;
+
+    }
+
+    #Photo img {
+        width: 30vw;
+        height: auto;
+    }
+
+    #biodata {
+        gap: 10px;
+        margin-top: 1%;
+    }
+
+    #profile, #Hobbies, #Education{
+        padding: 10px;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+
+    #SocialMedia {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    #SocialMedia a {
+        gap: 10px;
+    }
+
+    footer {
+        margin-top: 1%;
+        display: flex;
+    }
+
+    .fit-container{
+        width: 100%;
+        height: auto;
+
+    }
+
+    .footer-info {
+        margin-right: 0;
+    }
+
+    .footer-info p{
+        margin: 0;
+    }
+
+    .footer-logo{
+        margin: 0;
+
+    }
+    
+}
+
+@media screen and (max-width: 425px) {
+
+    .survey {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2%;
+        margin-right: 5%;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    .navbar {
+        width: 100%;    
+    }
+
+    .navbar button {
+        margin-right: 1px;
+        padding: 0;
+    }
+
+    .navbar button img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .navbar button {
+        margin-right: 20%;
+        padding: 0;
+    }
+
+    .navbar ul.menu {
+        flex-direction: column;
+        position: absolute;
+        width: 20rem;
+        height: 100vh;
+        background-color: var(--background-color);
+        top: 100%;
+        left: -100%;
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+    }
+
+    .navbar ul.menu.active {
+        left: 0;
+    }
+
+    .navbar ul.menu li a{
+        color: var(--hovertext-color);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .undernav {
+        margin-top: 200px;
+    }
+
+    main {
+        margin-top: 150px;
+    }
+
+    #catalogue {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #catalogue-area {
+        gap: 10px;
+    }
+
+    #text-area {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #logo-area img {
+        width: 60px;
+        height: 60px;
+    }
+
+    #text-area h1 {
+        font-size: 30px;
+    }
+
+    #text-area p {
+        font-size: 20px;
+    }
+
+    #catalogue {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #catalogue-area {
+        gap: 10px;
+    }
+
+    #Photo {
+        padding: 10px;
+        margin-right: auto;
+        margin-bottom: 10px;
+
+    }
+
+    #Photo img {
+        width: 30vw;
+        height: auto;
+    }
+
+    #biodata {
+        gap: 10px;
+        margin-top: 1%;
+    }
+
+    #profile, #Hobbies, #Education{
+        padding: 10px;
+        margin-left: auto;
+        margin-bottom: 10px;
+    }
+
+    #SocialMedia {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    #SocialMedia a {
+        gap: 10px;
+    }
+
+    footer {
+        margin-top: 1%;
+        display: flex;
+    }
+
+    .fit-container{
+        width: 100%;
+        height: auto;
+
+    }
+
+    .footer-info {
+        margin-right: 0;
+    }
+
+    .footer-info p{
+        margin: 0;
+    }
+
+    .footer-logo{
+        margin: 0;
+
+    }
+    
+}
